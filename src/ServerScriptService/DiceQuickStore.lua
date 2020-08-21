@@ -7,7 +7,7 @@
 local QuickStore = {}
 QuickStore.Default = {}
 QuickStore.Cache = {}
-QuickStore.Key = 'mulletmafiadev'
+QuickStore.Key = 'mulletmafiasuite'
 QuickStore.Queue = {}
 QuickStore.Query = false
 QuickStore.Types = {
@@ -79,7 +79,7 @@ function QuickStore:SaveData(dataFile,newData)
 	if dataFile ~= nil and newData ~= nil then
 		QuickStore.Cache[dataFile] = newData
 	elseif dataFile ~= nil and not newData then
-		QuickStore.Cache = newData
+		QuickStore.Cache = dataFile
 	end
 	local Tries = 0
 	local DataStoreKey
