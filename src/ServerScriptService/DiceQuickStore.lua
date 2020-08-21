@@ -38,7 +38,8 @@ local function DeepCopy(orig)
 end
 
 local function RunQueue()
-	if QuickStore.Query then
+	if not QuickStore.Query then
+		QuickStore.Query = true
 		repeat
 			local tempQueue = {}
 			for index = 1, #QuickStore.Queue do
@@ -59,6 +60,7 @@ local function RunQueue()
 				wait(index)
 			end
 		until #QuickStore.Queue == 0
+		QuickStore.Query = false
 	end
 end
 
